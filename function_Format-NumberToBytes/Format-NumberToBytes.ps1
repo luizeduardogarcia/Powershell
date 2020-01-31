@@ -8,10 +8,7 @@
 .EXAMPLE
    Format-NumberToBytes -Number 12345678
 .EXAMPLE
-   (123456789,456789123,789456123) | % { Format-NumberToBytes $_ }
-
-.TODO
-   Find a way to work in pipeline without the foreach loop
+   (123456789,456789123,789456123) | Format-NumberToBytes
 #>
 function Format-NumberToBytes
 {
@@ -23,7 +20,7 @@ function Format-NumberToBytes
         # Number to be formated
         [Parameter(
             Mandatory=$true,
-            ValueFromPipelineByPropertyName=$true,
+            ValueFromPipeline=$true,
             Position=0
             )
         ]
