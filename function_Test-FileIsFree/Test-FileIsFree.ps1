@@ -20,7 +20,7 @@ function Test-FileIsFree
     [OutputType([boolean])]
     Param
     (
-        # Number to be formated
+        # file path to be checked
         [Parameter(
             Mandatory=$true,
             ValueFromPipelineByPropertyName=$true,
