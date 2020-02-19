@@ -1,4 +1,4 @@
-Import-Module '..\scripts\modules\inc-functions.psm1'
+Import-Module '..\scripts\modules\Confirm-Directory.psm1'
 
 class TextLog {
     hidden [string]$logFolder
