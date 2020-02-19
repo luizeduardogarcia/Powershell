@@ -66,13 +66,7 @@ class TextLog {
 
     #writeValue for CSV
     [void]writeValue($column,$value) {
-        if ($this.logMode -eq 'csv') {
-            if ($this.csvValues.ContainsKey($column)) {
-                $this.csvValues.$column = $value
-            } else {        
-                $this.csvValues.Add($column,$value)
-            }
-        }
+        $this.csvValues.$column = $value
 
         if ($this.debug) {
             Write-Host ("{0} {1}" -f $column.PadRight(20,' '), $value)
