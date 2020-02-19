@@ -6,7 +6,7 @@ class TextLog {
     hidden [string[]]$columns
 
     [boolean]$debug
-    [hashtable]$csvValues
+    $csvValues
     
     #constructor for CSV
     TextLog ([string]$logFolder,[string]$logFile,[string[]]$columns,[boolean]$debug) {
@@ -14,7 +14,7 @@ class TextLog {
         $this.logFolder = Confirm-Directory $logFolder
         $this.logFile   = Join-Path $this.logFolder $logFile
         $this.columns   = $columns
-        $this.csvValues = [hashtable]::new()
+        $this.csvValues = [hashtable][ordered]::new()
 
         if (-not(Test-Path $this.logFile -PathType Leaf)) {
             try {
@@ -23,8 +23,10 @@ class TextLog {
             catch {
                 throw $_
             }
+        }
 
-            foreach($column in $columns) {
+        foreach($column in $columns) {
+            if (-not($this.csvValues.ContainsKey($column))) {
                 $this.csvValues.Add($column,'')
             }
         }
@@ -40,6 +42,7 @@ class TextLog {
         $this.debug     = $debug
         $this.logFolder = Confirm-Directory $logFolder
         $this.logFile   = Join-Path $this.logFolder $logFile
+        $this.csvValues = $null
 
         if (-not(Test-Path $this.logFile -PathType Leaf)) {
             try {
