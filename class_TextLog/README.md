@@ -2,6 +2,9 @@
 
 Simple class to save log interactions through your script execution. Choose between CSV or TXT format on creation of the object. Save some time showing the content output on the console - like a debug mode!
 
+### Requeriment Note:
+This class uses an user function `Confirm-Directory` in order to validate whatever the destination folder exists or not. You can access this function [here](https://github.com/luizeduardogarcia/Powershell/tree/master/function_Confirm-Directory).
+
 ## CSV Usage
 
 1. Declare a object with the type `[TextLog]`, passing to it´s constructor the file path, the file name, the columns, and a boolean to define if the debug mode is on (true) or not (false):
