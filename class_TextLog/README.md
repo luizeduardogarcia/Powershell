@@ -20,7 +20,10 @@ $csvLog.writeValue('Column2','step 1')
 # and this is done
 $csvLog.writeValue('Column3','success')
 ```
-
+> Tip: It´s also possible to write value direct to the column, using the property csvValues and referencing the column name:
+```powershell
+$csvLog.csvValues.Column2 = 'some other value'
+```
 3. After all columns have been filled, just write the line to the CSV file:
 ```powershell
 $csvLog.writeLine()
