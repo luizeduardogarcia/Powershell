@@ -1,5 +1,5 @@
 # Powershell Adventures
-This repo is for publishing the full code used on my post at Medium - links bellow.
+This repo is for publishing the full code used on my post at [Medium](https://medium.com/@luiz.epgarcia) - links bellow.
 ### Latest posts:
 * Feb 29 - [Telepoting Functions](https://medium.com/@luiz.epgarcia/quicktip-teleporting-functions-ab024b5d61f)
 * Feb 11 - [The number is even or odd?](https://medium.com/@luiz.epgarcia/quicktip-the-number-is-even-or-odd-fa87e7ba33e9)
